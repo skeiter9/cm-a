@@ -1,0 +1,303 @@
+@import 'vendor.styl'
+@import 'mixins.styl'
+
+color_green=#a9cf46 
+color_green2=#00A859
+color_gray =#E6E7E9
+color_brow =#606062
+
+/************ RESET **************/
+*
+	box-sizing border-box
+	&:before,&:after
+		box-sizing border-box
+
+
+body
+	color #3f3f41
+a 
+	text-decoration none
+h1,h2,h3,h4,h5,h6
+	margin 0
+blockquote
+	padding 0
+/********************* HELPERS *************/
+.ie-message
+	background-color orange
+	text-align center 
+	width 700px
+	margin 5px auto
+	padding 2px
+	color white
+	font-size 15px
+html.lt-ie8 .row 
+	clear both
+.bck-san-juan
+	background-color #d0e0ac
+.bck-header
+	background-image url('../images/bg-header.jpg')
+	background-position top center
+	background-repeat no-repeat
+.bck-header-san-juan
+	background-image url('../images/bg-header-san-juan.jpg')
+	background-position top center
+	background-repeat no-repeat
+.bck-header-productos
+	background-image url('../images/bg-header-productos.jpg')
+	background-position top center
+	background-repeat no-repeat
+.bck-header-contactanos
+	background-image url('../images/bg-header-contactanos.jpg')
+	background-position top center
+	background-repeat no-repeat
+.bck-white
+	background-color #ffffff
+.bck-green
+	background-color color_green2
+.radius
+	border-radius 15px
+.text-justify
+	text-align justify
+.text-center
+	text-align center
+.text-right
+	text-align right
+.text-small
+	font-size 12px
+.border 
+	border 1px solid rgba(0, 0, 0, .3)
+.padding
+	padding 15px 40px
+.padding-left
+	padding-left 15px	
+.margin-top
+	margin-top 10px
+.margin-bottom
+	margin-bottom 10px
+.img-responsive
+	max-width 100%
+	html.lt-ie9 &
+		max-width none
+		width 100%
+.color-purple
+	color #662c90
+.color-green
+	color color_green
+.color-green2
+	color color_green2
+.display-block
+	display block
+.display-none
+	display none
+/*********************** GRID ******************/
+.container
+	width 1000px
+	block-center()
+	clearfix() 
+.row
+	clearfix() 
+/****************** IMAGES **************/
+.figure-producto
+	position: relative
+	padding 30px
+	& img 
+		border-radius 15px
+		border 4px solid color_green
+		transition: all 0.2s ease
+		cursor pointer
+	& h3
+		color lighten(black,60%)
+		transition: all 0.2s ease
+		cursor pointer
+	&:hover
+		& h3
+			color black
+		& img 
+			border 4px solid color_green2
+	&.galeria
+		padding 2px 20px
+		& img
+			border-radius 0
+			border none
+.img-logo
+	position relative
+	top 70px
+	left 70px
+	transition: all 0.2s ease
+	&:hover
+		transform scale(1.1)
+	.lt-ie9 &
+		left -100px
+	.lt-ie8 &
+		left 70px	
+.img-aside
+	block-center()
+	margin-top 10px
+	&.logo
+		margin-top 40px
+		width 35%
+	&.picture
+		border-radius 10px 
+		border 2px solid darken(color_gray,10%)
+/************** NAVIGATION ****************/
+.trazo
+	display block
+	border none
+	background-image url('../images/bg-hr.png')
+	height 147px
+	position: absolute
+	top: 202px
+	background-repeat: no-repeat
+	z-index: 2
+	pointer-events none
+	.lt-ie9 &
+		display none
+.nav
+	& a 
+		display block
+		float left
+		transition: all 0.2s ease
+	&.social
+		marging 5px 0
+		padding-left 790px
+		overflow hidden
+		html.lt-ie9 &
+			padding-left 0
+		& a 
+			margin-right 8%
+			html.lt-ie9 &
+				margin 15px
+			& span
+				position: relative
+				top -10px
+			&.item-facebook
+				&:hover
+					& svg
+						fill :#1E48AA
+					& span
+						color : #1E48AA
+			&.item-twitter
+				&:hover
+					& svg
+						fill :#01A1D1
+					& span
+						color : #01A1D1
+		& svg
+			width 18px
+			fill #4b4b4d
+	&.main 
+		display block
+		margin-top 113px
+		html.lt-ie9 &
+			margin-top 0
+			padding-left 33%
+		& a 
+			width (65/5)%
+			margin-left .5%
+			background-color #00A859
+			border-radius 0 0 10px 10px
+			text-align center 
+			padding 45px 0 25px 0
+			color white
+			position: relative
+			font-weight bold
+			html.lt-ie9 &
+				margin-top 100px
+				margin-right 0
+				width 17.75%	
+			&.current
+				background-color #a8cf45
+				padding 70px 0 20px 0
+			&:first-child
+				margin-left 33%
+			&:last-child
+				border-radius: 0 20px 10px 10px
+				top: 20px
+				padding: 25px 0 25px 0
+				&:hover
+					background-color #a8cf45
+					padding 50px 0 20px 0
+				&.current
+					padding 50px 0 20px 0
+					margin-bottom 20px
+			&:hover
+				background-color #a8cf45
+				padding 70px 0 20px 0
+	&.navbar
+		& a 
+			float none
+			border-radius 10px
+			color white
+			background-color color_gray
+			color color_brow
+			padding 7px 0 7px 20px 
+			margin 10px 0
+			font-weight bold
+			position: relative
+			&:hover
+				background-color color_green
+				color white
+				&:after
+					content ''
+					display block
+					position: absolute
+					square(8px)
+					border-right 8px solid transparent
+					border-left 8px solid white
+					border-top 8px solid transparent
+					border-bottom 8px solid transparent
+					top 9px 
+					right 5px
+			&.current
+				background-color color_green
+				color white
+				&:after
+					content ''
+					display block
+					position: absolute
+					square(8px)
+					border-right 8px solid transparent
+					border-left 8px solid white
+					border-top 8px solid transparent
+					border-bottom 8px solid transparent
+					top 9px 
+					right 5px
+/******************* APP ***************/
+.padding-footer
+	padding 0 20px
+.padding-small
+	padding 20px
+.margin-small
+	margin 20px
+.border-main
+	border 2px dotted rgba(0, 0, 0, .2)
+	margin 20px
+.border-title
+	padding-bottom 15px
+	border-bottom 2px dotted color_green
+#uno,#dos,#tres 
+	display none
+.star
+	position: absolute
+	left 0
+input,textarea
+	border 1px solid #a6a9ab
+	border-radius 5px
+	padding 5px
+input
+	&#nombre
+		width 100%
+		margin-bottom 5px
+	&#email
+		width 50%
+		margin-bottom 5px
+label
+	display block
+textarea
+	width 100%
+.button
+	float right
+	padding 10px 30px
+	border none
+	border-radius 5px
+	color white
