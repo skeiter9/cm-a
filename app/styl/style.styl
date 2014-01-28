@@ -2,7 +2,7 @@
 @import 'mixins.styl'
 
 color_green=#76c04d
-color_green2=#00A859
+color_green2=#a5ce37
 color_gray =#E6E7E9
 color_brow =#606062
 color_facebook=#1E48AA
@@ -69,7 +69,7 @@ html.lt-ie8 .row
 .margin-top
 	margin-top 10px
 .margin-bottom
-	margin-bottom 10px
+	margin-bottom 30px
 .img-responsive
 	max-width 100%
 	html.lt-ie9 &
@@ -81,10 +81,14 @@ html.lt-ie8 .row
 	color color_green
 .color-green2
 	color color_green2
+.color-green3
+	color darken(color_green2,15%)
 .display-block
 	display block
 .display-none
 	display none
+.margin-tb-small
+	margin 8px 0
 /*********************** GRID ******************/
 .container
 	width 1100px
@@ -150,6 +154,10 @@ html.lt-ie8 .row
 	.lt-ie9 &
 		display none
 /***************** USED ************/
+.clear
+	clear both
+.block-center
+	block-center()
 header
 	z-index: 2
 	position: relative
@@ -216,12 +224,20 @@ header
 		height: 60px
 .bck-alpes
 	background-color #80c64a
+.bck-dark
+	background-color #696666
 .padding-slider
 	padding 40px 40px 20px 20px
 .padding-small
 	padding 20px 20px 10px 20px
+.padding-small-2
+	padding 20px 20px 10px 40px
 .padding-main
 	padding 70px 0 10px 0
+.padding-top-big
+	padding-top 50px
+.margin-top-big
+	margin-top 50px
 .shadow
 	box-shadow 0 0 20px 10px rgba(0, 0, 0,.1)
 .nav
@@ -281,45 +297,33 @@ header
 			&:hover
 				background-color darken(color_green,15%)
 	&.navbar
+		&:after
+			content ""
+			top 0
+			right -10px 
+			position absolute
+			height 100%
+			border-right 3px solid color_gray
 		& a 
 			float none
-			border-radius 10px
+			border-radius 10px 0 0 10px
 			color white
 			background-color color_gray
 			color color_brow
-			padding 7px 0 7px 20px 
-			margin 10px 0
+			padding 10px 30px
+			margin 5px 0 10px 40px
 			font-weight bold
 			position: relative
+			text-align right
 			&:hover
 				background-color color_green
 				color white
-				&:after
-					content ''
-					display block
-					position: absolute
-					square(8px)
-					border-right 8px solid transparent
-					border-left 8px solid white
-					border-top 8px solid transparent
-					border-bottom 8px solid transparent
-					top 9px 
-					right 5px
 			&.current
 				background-color color_green
 				color white
-				&:after
-					content ''
-					display block
-					position: absolute
-					square(8px)
-					border-right 8px solid transparent
-					border-left 8px solid white
-					border-top 8px solid transparent
-					border-bottom 8px solid transparent
-					top 9px 
-					right 5px
 /******************* APP ***************/
+.padding-form
+	padding 20px 50px 10px 70px
 .padding-footer
 	padding 0 20px
 .margin-small
@@ -327,10 +331,11 @@ header
 .border-main
 	border 2px dotted rgba(0, 0, 0, .2)
 	margin 20px
+
 .border-title
 	padding-bottom 15px
 	border-bottom 2px dotted color_green
-#uno,#dos,#tres 
+#uno,#dos,#tres,#cuatro
 	display none
 .star
 	position: absolute
@@ -341,15 +346,14 @@ input,textarea
 	padding 5px
 input
 	&#nombre
-		width 100%
 		margin-bottom 5px
 	&#email
-		width 50%
 		margin-bottom 5px
 label
 	display block
 textarea
 	width 100%
+	margin 5px 0
 .button
 	float right
 	padding 10px 30px
