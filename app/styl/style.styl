@@ -49,6 +49,7 @@ html.lt-ie8 .row
 	background-color color_green2
 .bck-base
 	background-color color_base
+	position relative
 .radius
 	border-radius 20px
 .text-justify
@@ -134,7 +135,7 @@ html.lt-ie8 .row
 .img-pic
 	border-radius 50%
 	border 13px solid white
-	box-shadow 0 0 15px 10px rgba(0, 0, 0,.1)
+	box-shadow 0 0 10px 10px rgba(0, 0, 0,.1)
 /************** NAVIGATION ****************/
 .trazo
 	display block
@@ -149,6 +150,20 @@ html.lt-ie8 .row
 	.lt-ie9 &
 		display none
 /***************** USED ************/
+header
+	z-index: 2
+	position: relative
+.fix-circle
+	&:before
+		content ''
+		position: absolute
+		top -140px
+		left 41.1%
+		square(260px)
+		border-radius 50%
+		background-color color_base
+		box-shadow 0 0 7px 5px rgba(0, 0, 0,.1) inset
+
 .slider
 	& h3
 		color color_red
@@ -189,6 +204,16 @@ html.lt-ie8 .row
 	position:  relative
 	top 30px
 	z-index: 2
+	&:before
+		content: ""
+		z-index: -1
+		position: absolute
+		display: block
+		left: 25%
+		top: 120px
+		background-color: color_base
+		width: 400px
+		height: 60px
 .bck-alpes
 	background-color #80c64a
 .padding-slider
@@ -198,7 +223,7 @@ html.lt-ie8 .row
 .padding-main
 	padding 70px 0 10px 0
 .shadow
-	box-shadow 0 0 20px 5px rgba(0, 0, 0,.1)
+	box-shadow 0 0 20px 10px rgba(0, 0, 0,.1)
 .nav
 	& a 
 		display block
